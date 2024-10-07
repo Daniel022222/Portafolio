@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programación de aplicaciones web y móviles">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="" href="Img/paisaje.jpg" />
+    <title>INICIO</title>
+</head>
+<body>
+    
+    <div class="welcome-message">
+        <h1>Programación de Aplicaciones Web y Móviles </h1>
+        <p>Explora los trabajos realizados y el progreso de cada semana</p>
+    </div>
+
+    <header>
+        <a href="./index.html" class="logo">
+            <img src="./Img/f1.jpg" alt="Logo de Daniel SG" class="logo-img">
+            Daniel SG
+        </a>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">☰</label>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="./index.html">INICIO</a></li>
+            <li><a href="./datos.html">DATOS</a></li>
+            <li><a href="./curso.html">CURSO</a></li>
+            <li><a href="./trabajos.html">TRABAJOS +</a>
+                <!--
+                    <ul>
+                        <li><a href="./Trabajos/APLICACIONES MÓVILES.pdf">Semana 01</a></li>
+                        <li><a href="./Trabajos/Manual Dart.pdf">Semana 02</a></li>
+                        <li><a href="./Trabajos/Actividad 03 Dart.pdf">Semana 03</a></li>
+                        <li><a href="#">Semana 04</a></li>
+                        <li><a href="#">Semana 05</a></li>
+                        <li><a href="#">Semana 06</a></li>
+                    </ul>
+                -->
+
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Todos los derechos reservados D</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+????/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%; /* Asegúrate de que html y body ocupen toda la altura */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Permite que el contenido crezca verticalmente */
+    min-height: 100vh; /* Altura mínima para que el footer esté al final */
+    background: url(./Img/banner01.jpg) no-repeat center center/cover;
+}
+
+.welcome-message {
+    margin: auto; /* Centra verticalmente el mensaje de bienvenida */
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(6, 81, 100, 0.63);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    padding: 0 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+header .logo-img {
+    width: 70px; 
+    height: auto;
+    border-radius: 50%;
+    margin-right: 10px; 
+}
+
+header .navbar ul {
+    list-style: none;
+}
+
+header .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a {
+    font-size: 20px;
+    padding: 20px;
+    color: #ffffff;
+    display: block;
+    transition: background 0.3s, color 0.3s;
+}
+
+header .navbar ul li a:hover,
+header .navbar ul li a:focus {
+    background: #dafffa;
+    color: #080808;
+}
+
+header .navbar ul li ul {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: rgba(24, 70, 129, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+header .navbar ul li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+#menu-bar {
+    display: none;
+}
+
+header label {
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    display: none;
+}
+
+@media(max-width: 991px) {
+    header {
+        padding: 20px;
+    }
+
+    header label {
+        display: block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(24, 87, 150, 0.54);
+        border-top: 1px solid rgba(0,0,0,.1);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    #menu-bar:checked ~ .navbar {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    header .navbar ul li {
+        width: 100%;
+    }
+
+    header .navbar ul li ul {
+        position: relative;
+        width: 100%;
+    }
+
+    header .navbar ul li ul li {
+        background: rgba(16, 62, 88, 0.6);
+    }
+
+    @media(max-width: 576px) {
+        header .navbar ul li a {
+            font-size: 18px;
+            padding: 15px;
+        }
+
+        .welcome-message {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+footer {
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    background: rgba(6, 81, 100, 0.8);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #dafffa;
+}
