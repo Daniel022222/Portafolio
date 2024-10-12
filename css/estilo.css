@@ -169,6 +169,85 @@ header label {
     margin-top: 20px; /* Espacio superior */
 }
 
+/* HABILIDADES */
+
+.skills {
+    background: linear-gradient(to bottom, rgba(184, 184, 184, 0.9), rgba(255, 255, 255, 1));
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 5px solid #000000; /* Línea de separación superior */
+}
+
+.skills-title {
+    font-size: 3.125rem; /* 50px */
+    color: #333;
+    font-family: 'Augustus', serif;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.skills-category {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 40%; /* Ajusta el tamaño de los cuadros */
+    min-width: 250px; /* Asegura un tamaño mínimo en pantallas pequeñas */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Suaviza la transición */
+    position: relative; /* Para efectos de sombra */
+}
+
+.skills-category:hover {
+    transform: scale(1.05) rotateZ(2deg); /* Aumenta ligeramente el tamaño y rota */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Más sombra al hacer hover */
+    background-color: #f0f0f0; /* Cambia el fondo al hacer hover */
+}
+
+.skills-category h3 {
+    font-size: 1.5rem; /* 24px */
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s; /* Suaviza el cambio de color */
+}
+
+.skills-category h3:hover {
+    color: #555; /* Cambia a gris al hacer hover */
+}
+
+.skills-category ul {
+    list-style-type: none; /* Sin viñetas */
+    padding-left: 0; /* Sin padding */
+}
+
+.skills-category li {
+    font-size: 1.125rem; /* 18px */
+    color: #555;
+    margin: 5px 0; /* Espacio entre los elementos de la lista */
+    transition: color 0.3s; /* Suaviza el cambio de color */
+}
+
+.skills-category li:hover {
+    color: #333; /* Cambia a negro al hacer hover */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Efecto de sombra en el texto */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .skills-category {
+        width: 90%; /* Ocupa más espacio en pantallas pequeñas */
+    }
+}
+
+
+
 
 /* SERVICIOS */
 
@@ -315,6 +394,127 @@ header label {
     background-color: #3a3b3d9d; /* Color de fondo al pasar el mouse */
     transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
 }
+
+/* CONTACTO */
+
+/* CONTACTO */
+
+.contact {
+    background-color: #b1b0b0b7;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 50px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.contact-img {
+    width: 100%;
+    max-width: 400px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    border-radius: 10px;
+}
+
+.contact-form {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.contact-form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 18px; /* Aumentar tamaño del texto */
+    color: #333; /* Color más oscuro para mejor contraste */
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 15px; /* Más espaciado interno */
+    margin-bottom: 20px; /* Mayor separación entre elementos */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 5px; /* Esquinas redondeadas */
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #6a6a6a; /* Color de borde al enfocar */
+    box-shadow: 0 0 5px rgba(106, 106, 106, 0.5); /* Sombra al enfocar */
+}
+
+.submit-button {
+    background-color: #171718; /* Color de fondo azul */
+    color: #fff;
+    padding: 12px 25px; /* Aumentar espaciado interno */
+    border: none;
+    border-radius: 5px;
+    font-size: 18px; /* Aumentar tamaño de fuente */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+
+.submit-button:hover {
+    background-color: #727374; /* Color de fondo más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Colocar imagen y formulario en columna */
+        align-items: center; /* Centrar contenido */
+    }
+
+    .contact-image {
+        padding: 0;
+    }
+
+    .contact-img {
+        max-width: 90%; /* Ajustar tamaño de imagen en pantallas pequeñas */
+    }
+
+    .contact-form {
+        width: 100%; /* Asegurar que el formulario ocupe el 100% */
+        margin-top: 20px; /* Espacio entre imagen y formulario */
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-title {
+        font-size: 30px; /* Reducir tamaño del título en pantallas más pequeñas */
+    }
+
+    .contact-form label {
+        font-size: 16px; /* Reducir tamaño de etiqueta */
+    }
+
+    .submit-button {
+        padding: 10px 20px; /* Ajustar espaciado del botón */
+    }
+}
+
 
 
 
